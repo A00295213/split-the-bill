@@ -17,7 +17,7 @@ namespace SplitBillLibrary
 
         public Dictionary<string, decimal> CalculateTip(Dictionary<string, decimal> mealCost, float tipPercentage)
         {
-            var Cost = 0m;
+            var Cost = 0;
             foreach (var cost in mealCost.Values)
             {
                 Cost += cost;
@@ -39,7 +39,8 @@ namespace SplitBillLibrary
         {
             if (numberOfPatrons <= 0)
             {
-                throw new ArgumentException("Number of patrons must be greater than zero.");
+                throw new ArgumentException("Number of patrons should be greater than 0
+                ");
             }
 
             var totalTip = price * (decimal)(tipPercentage / 100);
