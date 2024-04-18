@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillLibrary", "SplitBillLibrary\SplitBillLibrary.csproj", "{FB79D982-E388-44F3-B820-99B512C53103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitBillTests", "SplitBillTests\SplitBillTests.csproj", "{EE45691D-EC30-48A9-BF14-146AC5CB234B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB79D982-E388-44F3-B820-99B512C53103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB79D982-E388-44F3-B820-99B512C53103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB79D982-E388-44F3-B820-99B512C53103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB79D982-E388-44F3-B820-99B512C53103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE45691D-EC30-48A9-BF14-146AC5CB234B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE45691D-EC30-48A9-BF14-146AC5CB234B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE45691D-EC30-48A9-BF14-146AC5CB234B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE45691D-EC30-48A9-BF14-146AC5CB234B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

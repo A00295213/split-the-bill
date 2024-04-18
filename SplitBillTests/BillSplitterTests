@@ -1,0 +1,56 @@
+using System;
+using Xunit;
+using SplitBillLibrary;
+using System.Collections.Generic;
+
+namespace SplitBillTests
+{
+    public class BillSplitterTests
+    {
+        private readonly BillSplitter _billSplitter;
+
+        public BillSplitterTests()
+        {
+            _billSplitter = new BillSplitter();
+        }
+
+        [Theory]
+        [InlineData(100, 4, 25)]
+        [InlineData(200, 5, 40)]
+        [InlineData(150, 3, 50)]
+        public void SplitAmount_ShouldReturnCorrectAmount(decimal amount, int people, decimal expectedAmount)
+        {
+            var result = _billSplitter.SplitAmount(amount, people);
+            Assert.Equal(expectedAmount, result);
+        }
+
+        [Fact]
+        public void CalculateTip_ShouldReturnCorrectTipAmount()
+        {
+            var mealCost = new Dictionary<string, decimal>
+            {
+                { "Jacky", 50 },
+                { "Shyuli", 75 },
+                { "Akka", 100 }
+            };
+
+            var tipPercentage = 15f;
+
+            var result = _billSplitter.CalculateTip(mealCost, tipPercentage);
+
+            Assert.Equal(8.75m, result["Jacky"]);
+            Assert.Equal(13.125m, result["Shyuli"]);
+            Assert.Equal(17.5m, result["Akka"]);
+        }
+
+        [Theory]
+        [InlineData(100, 4, 10, 2.5)]
+        [InlineData(150, 5, 15, 4.5)]
+        [InlineData(200, 3, 20, 13.33)]
+        public void TipPerPerson_ShouldReturnCorrectTipAmount(decimal price, int numberOfPatrons, float tipPercentage, decimal expectedTip)
+        {
+            var result = _billSplitter.TipPerPerson(price, numberOfPatrons, tipPercentage);
+            Assert.Equal(expectedTip, Math.Round(result, 2));
+        }
+    }
+}
